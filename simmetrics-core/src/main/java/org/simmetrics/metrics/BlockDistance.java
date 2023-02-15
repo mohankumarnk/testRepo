@@ -2,7 +2,7 @@
  * #%L
  * Simmetrics Core
  * %%
- * Copyright (C) 2014 - 2016 Simmetrics Authors
+ * Copyright (C) 2014 - 2023 Simmetrics Authors
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import com.google.common.collect.Multiset;
  * <code>
  * similarity(a,b) = 1 - distance(a,b) / (∣a∣ + ∣b∣)
  * <br>
- * distance(a,b) = ∣∣a - b∣∣₁
+ * distance(a,b) = ∣∣a - b∣∣�?
  * </code>
  * <p>
  * This class is immutable and thread-safe.

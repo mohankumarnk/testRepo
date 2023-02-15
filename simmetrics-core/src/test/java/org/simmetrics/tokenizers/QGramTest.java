@@ -2,7 +2,7 @@
  * #%L
  * Simmetrics Core
  * %%
- * Copyright (C) 2014 - 2016 Simmetrics Authors
+ * Copyright (C) 2014 - 2023 Simmetrics Authors
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -49,11 +49,11 @@ public class QGramTest {
 							// Expected output
 							"1", "2", "3", "4", "5", "6", "7", "8", "9", "1",
 							"2", "3", "4", "5", "6", "7", "8", "9"),
-					new T("HeÌllo",
+					new T("HeÌ?llo",
 					// Diacritics are their own code point
-							"H", "e", "Ì", "l", "l", "o"),
+							"H", "e", "Ì?", "l", "l", "o"),
 					// Linear-A surrogate pairs, pairs should be kept together
-					new T("ğ˜€ğ˜ğ˜‚", "ğ˜€", "ğ˜", "ğ˜‚") };
+					new T("ğ?˜€ğ?˜?ğ?˜‚", "ğ?˜€", "ğ?˜?", "ğ?˜‚") };
 		}
 	}
 
@@ -133,13 +133,13 @@ public class QGramTest {
 							"12", "23", "34", "45", "56", "67", "78", "89",
 							"91", "12", "23", "34", "45", "56", "67", "78",
 							"89"), 
-					new T("HeÌllo",
+					new T("HeÌ?llo",
 					// Diacritics are their own code point
-							"He", "eÌ", "Ìl", "ll", "lo"),
+							"He", "eÌ?", "Ì?l", "ll", "lo"),
 					// Linear-A 
 					// tokenizer should split on code points
-					new T("ğ˜€ğ˜ğ˜‚","ğ˜€ğ˜", "ğ˜ğ˜‚"),
-					new T("ğ˜€ğ˜", "ğ˜€ğ˜") };
+					new T("ğ?˜€ğ?˜?ğ?˜‚","ğ?˜€ğ?˜?", "ğ?˜?ğ?˜‚"),
+					new T("ğ?˜€ğ?˜?", "ğ?˜€ğ?˜?") };
 		}
 	}
 
@@ -159,8 +159,8 @@ public class QGramTest {
 					new T("12", "12"),
 					// Linear-A 
 					// tokenizer should filter on code points
-					new T("ğ˜€ğ˜‚", "ğ˜€ğ˜‚"), 
-					new T("ğ˜€") };
+					new T("ğ?˜€ğ?˜‚", "ğ?˜€ğ?˜‚"), 
+					new T("ğ?˜€") };
 		}
 	}
 
@@ -207,11 +207,11 @@ public class QGramTest {
 					new T("123", "123"),
 					new T("12345678", "123", "234", "345", "456", "567", "678"),
 					new T("123123", "123", "231", "312", "123"),
-					new T("HeÌllo",
+					new T("HeÌ?llo",
 					// Diacritics are their own code point
-							"HeÌ", "eÌl", "Ìll", "llo"),
+							"HeÌ?", "eÌ?l", "Ì?ll", "llo"),
 					// Linear-A surrogate pairs, pairs should be kept together
-					new T("ğ˜€ğ˜ğ˜‚", "ğ˜€ğ˜ğ˜‚")
+					new T("ğ?˜€ğ?˜?ğ?˜‚", "ğ?˜€ğ?˜?ğ?˜‚")
 
 			};
 		}
